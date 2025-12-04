@@ -1,4 +1,5 @@
 
+from additional.models import SocialLink
 from blogs.models import Category
 
 def get_categories(request):
@@ -8,3 +9,7 @@ def get_categories(request):
     return {
         'categories' : Category.objects.all()
     }
+
+def get_social_links(request):
+    social_links=SocialLink.objects.all()
+    return dict(social_links=social_links)
